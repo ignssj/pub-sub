@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-builder.Services.AddObserver("amqp://localhost:5672", "guest", "guest");
+builder.Services.AddPublisher("amqp://localhost:5672", "guest", "guest");
 builder.Services.AddScoped<IPublisher, MessagePublisher>();
 
 var app = builder.Build();
